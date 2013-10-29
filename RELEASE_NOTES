@@ -1,0 +1,46 @@
+Version 0.9.x to 0.10:
+
+Automx does support mobileconfig profiles for Apple iOS devices as well as
+Mac OS X Mail. The profiles are optionally signed.
+
+The backend "file" was expanded and does support the new option mobileconfig,
+which may point to a mobileconfig file (it is the equivalent to the
+autoconfig/autodiscover option of that specific backend).
+
+Version 0.8 to 0.9:
+
+Failure Counter (Denial-of-Service-Attack protection)
+A failure counter tracks bad (email address) requests. The counter serves to
+protect automx from Denial-of-Service-Attacks.
+
+An attacker might try to iterate a list of email addresses against automx to
+see, if the server returns valid results or 500 temp errors. This feature is
+expected to be especially useful for automx setups using database driven
+backends. automx will stop querying the database once the border limit
+has been reached.
+
+The protection is built using memcached, as it allows a central instance to
+collect for multiple automx processes.
+
+Multi Service Profiles
+Multi service profile support allows to serve more than one setting for the
+same service within a profile.
+
+For this we added several new backends and a new option that allows automx to
+follow any further backends. These backends may either substitute the former
+settings or add new information.
+
+
+Improved Logging
+As we made some changes to the code, we realized that it important to change
+logging behavior. So we now log all automx messages to an extra file and also
+the debugging output does give us much more information as the version 0.8.
+
+
+Code Cleanups
+Many changes have been done inside the code itself. Code cleanups and a better
+exception handling for situations, where no data could be retrieved from
+databases. Also the main file now is much cleaner, as we introduced some
+constant variables for error codes.
+
+# vim: set tw=80:
