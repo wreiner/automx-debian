@@ -1,0 +1,57 @@
+Description: Paths are changed to Debian locations
+ As upstream uses different paths than Debian, the provided examples have been
+ modified so that the examples will work for the installed package on a
+ Debian system.
+Author: Walter Reiner <walter.reiner@wreiner.at>
+Last-Update: 2013-11-07
+Forwarded: not-needed
+Index: automx/src/conf/apache.conf.example
+===================================================================
+--- automx.orig/src/conf/apache.conf.example	2013-11-07 09:14:49.799876590 +0100
++++ automx/src/conf/apache.conf.example	2013-11-08 09:23:17.754781781 +0100
+@@ -5,10 +5,16 @@
+   ServerAdmin webmaster@example.com
+ 
+   <IfModule mod_wsgi.c>
+-    WSGIScriptAlias /mail/config-v1.1.xml /usr/lib/automx/automx_wsgi.py
+-    <Directory "/usr/lib/automx">
+-      Order allow,deny
+-      Allow from all
++    WSGIScriptAlias /mail/config-v1.1.xml /usr/share/pyshared/automx_wsgi.py
++    <Directory "/usr/share/pyshared/automx">
++        <IfVersion < 2.4>
++            Order allow,deny
++            Allow from all
++        </IfVersion>
++
++        <IfVersion >= 2.4>
++            Require all granted
++        </IfVersion> 
+     </Directory>
+   </IfModule>
+ 
+@@ -21,12 +27,18 @@
+   ServerAdmin webmaster@example.com
+ 
+   <IfModule mod_wsgi.c>
+-    WSGIScriptAlias /Autodiscover/Autodiscover.xml /usr/lib/automx/automx_wsgi.py
+-    WSGIScriptAlias /autodiscover/autodiscover.xml /usr/lib/automx/automx_wsgi.py
+-    WSGIScript /mobileconfig /usr/lib/automx/automx_wsgi.py
+-    <Directory "/usr/lib/automx">
+-      Order allow,deny
+-      Allow from all
++    WSGIScriptAlias /Autodiscover/Autodiscover.xml /usr/share/pyshared/automx_wsgi.py
++    WSGIScriptAlias /autodiscover/autodiscover.xml /usr/share/pyshared/automx_wsgi.py
++    WSGIScript /mobileconfig /usr/share/pyshared/automx_wsgi.py
++    <Directory "/usr/share/pyshared/automx">
++        <IfVersion < 2.4>
++            Order allow,deny
++            Allow from all
++        </IfVersion>
++
++        <IfVersion >= 2.4>
++            Require all granted
++        </IfVersion> 
+     </Directory>
+   </IfModule>
+ 

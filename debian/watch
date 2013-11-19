@@ -1,0 +1,4 @@
+version=3
+opts=uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\d*)$/$1~$2/,filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/automx-$1.tar.gz/ \
+https://github.com/sys4/automx/releases \
+/sys4/automx/archive/v([\d\.]+)\.tar\.gz
