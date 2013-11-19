@@ -1,0 +1,9 @@
+Document: automx
+Title: automx Documentation
+Author: Patrick Ben Koetter <p@sys4.de>
+Abstract: This manual describes how to use and install automx.
+Section: Network/Communication
+
+Format: HTML
+Index: /usr/share/doc/automx/html/INSTALL.html
+Files: /usr/share/doc/automx/html/*.html

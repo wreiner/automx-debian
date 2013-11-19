@@ -5,10 +5,16 @@
   ServerAdmin webmaster@example.com
 
   <IfModule mod_wsgi.c>
-    WSGIScriptAlias /mail/config-v1.1.xml /usr/lib/automx/automx_wsgi.py
-    <Directory "/usr/lib/automx">
-      Order allow,deny
-      Allow from all
+    WSGIScriptAlias /mail/config-v1.1.xml /usr/share/pyshared/automx_wsgi.py
+    <Directory "/usr/share/pyshared/automx">
+        <IfVersion < 2.4>
+            Order allow,deny
+            Allow from all
+        </IfVersion>
+
+        <IfVersion >= 2.4>
+            Require all granted
+        </IfVersion> 
     </Directory>
   </IfModule>
 
@@ -21,12 +27,18 @@
   ServerAdmin webmaster@example.com
 
   <IfModule mod_wsgi.c>
-    WSGIScriptAlias /Autodiscover/Autodiscover.xml /usr/lib/automx/automx_wsgi.py
-    WSGIScriptAlias /autodiscover/autodiscover.xml /usr/lib/automx/automx_wsgi.py
-    WSGIScript /mobileconfig /usr/lib/automx/automx_wsgi.py
-    <Directory "/usr/lib/automx">
-      Order allow,deny
-      Allow from all
+    WSGIScriptAlias /Autodiscover/Autodiscover.xml /usr/share/pyshared/automx_wsgi.py
+    WSGIScriptAlias /autodiscover/autodiscover.xml /usr/share/pyshared/automx_wsgi.py
+    WSGIScript /mobileconfig /usr/share/pyshared/automx_wsgi.py
+    <Directory "/usr/share/pyshared/automx">
+        <IfVersion < 2.4>
+            Order allow,deny
+            Allow from all
+        </IfVersion>
+
+        <IfVersion >= 2.4>
+            Require all granted
+        </IfVersion> 
     </Directory>
   </IfModule>
 

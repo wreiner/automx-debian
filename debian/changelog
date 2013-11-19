@@ -1,5 +1,5 @@
 automx (0.10.0-1) unstable; urgency=low
 
-  * source package automatically created by stdeb 0.6.0+git
+  * Initial Release (Closes: #662168)
 
- -- unknown <unknown@unknown>  Tue, 29 Oct 2013 13:22:39 +0100
+ -- Walter Reiner <walter.reiner@wreiner.at>  Tue, 29 Oct 2013 13:22:39 +0100
