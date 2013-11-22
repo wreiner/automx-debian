@@ -5,6 +5,8 @@ Priority: optional
 Build-Depends: debhelper (>= 9), python-all
 Standards-Version: 3.9.5
 Homepage: https://github.com/sys4/automx
+Vcs-Git: https://github.com/wreiner/automx-debian.git
+Vcs-Browser: https://github.com/wreiner/automx-debian.git
 
 Package: automx
 Architecture: all
