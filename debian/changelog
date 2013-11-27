@@ -1,4 +1,4 @@
-automx (0.10.0-2) UNRELEASED; urgency=low
+automx (0.10.0-2) unstable; urgency=low
 
   * Fixed control fields, added Vcs field, fixed dependencies
 
