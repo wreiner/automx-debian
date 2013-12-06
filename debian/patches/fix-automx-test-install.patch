@@ -1,0 +1,10 @@
+Fixes #731233, automx-test included in setup.py
+--- a/setup.py
++++ b/setup.py
+@@ -11,5 +11,6 @@
+       packages=['automx'],
+       package_dir={'': 'src'},
+       data_files=[('/etc', ['src/conf/automx.conf'])],
++      scripts=['src/automx-test'],
+       )
+ 

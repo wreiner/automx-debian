@@ -1,6 +1,8 @@
 automx (0.10.0-2) unstable; urgency=low
 
-  * Fixed control fields, added Vcs field, fixed dependencies
+  * Fixed control fields, added Vcs field
+  * Fixed dependencies
+  * Fixed shipping automx-test (Closes: #731233)
 
  -- Walter Reiner <walter.reiner@wreiner.at>  Fri, 22 Nov 2013 18:42:02 +0100
 
